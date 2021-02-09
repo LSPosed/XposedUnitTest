@@ -12,6 +12,10 @@ import de.robv.android.xposed.XposedHelpers;
 import de.robv.android.xposed.callbacks.XC_LoadPackage.LoadPackageParam;
 
 public class HookMain implements IXposedHookLoadPackage {
+    static {
+        System.loadLibrary("lsposed_module");
+    }
+
     public void handleLoadPackage(final LoadPackageParam lpparam) throws Throwable {
         if (lpparam.packageName.equals("io.github.lsposed.unittest")) {
             XposedBridge.log("Injecting into self...");

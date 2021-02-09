@@ -1,5 +1,6 @@
 package io.github.lsposed.unittest;
 
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,5 +20,6 @@ public class MainActivity extends AppCompatActivity {
             int passed = Methods.runAll();
             Toast.makeText(this, String.format(Locale.ENGLISH, "%d of %d tests succeed.", passed, Methods.allTests), Toast.LENGTH_LONG).show();
         });
+        String []test = Build.SUPPORTED_ABIS;
     }
 }
